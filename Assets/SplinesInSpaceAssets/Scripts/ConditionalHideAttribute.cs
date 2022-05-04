@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using System;
 using System.Collections;
 
@@ -23,6 +24,7 @@ public class ConditionalHideAttribute : PropertyAttribute
         this.enumIndex = enumIndex;
     }
 }
+#endif
 
 
 

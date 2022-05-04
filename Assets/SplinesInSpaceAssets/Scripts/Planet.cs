@@ -13,8 +13,11 @@ public class Planet : MonoBehaviour
     [Range(2, 256)]
     public int resolution = 10;
 
+
     public ShapeSettings shapeSettings;
     public ColourSettings colourSettings;
+
+    // public string planetName;
 
     [HideInInspector]
     public bool shapeSettingsFoldout;
@@ -22,7 +25,7 @@ public class Planet : MonoBehaviour
     public bool colourSettingsFoldout;
     
     ShapeGenerator shapeGenerator = new ShapeGenerator();
-    ColourGenerator colourGenerator = new ColourGenerator();
+    public ColourGenerator colourGenerator = new ColourGenerator();
 
     [SerializeField, HideInInspector]
     MeshFilter[] meshFilters;

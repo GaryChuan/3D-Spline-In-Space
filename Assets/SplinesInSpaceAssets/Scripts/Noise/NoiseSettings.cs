@@ -8,10 +8,14 @@ public class NoiseSettings
     public enum FilterType { Simple, Rigid };
     public FilterType filterType;
 
+    #if UNITY_EDITOR
     [ConditionalHide("filterType", 0)]
+    #endif
     public SimpleNoiseSettings simpleNoiseSettings;
-
+    
+    #if UNITY_EDITOR
     [ConditionalHide("filterType", 1)]
+    #endif
     public RigidNoiseSettings rigidNoiseSettings;
 
     [System.Serializable]
@@ -20,7 +24,7 @@ public class NoiseSettings
         [Range(1, 8)]
         [TextArea]
         [Tooltip("Number of times the noise gets processed")]
-        public int numLayer = 1;
+        public int numLayers = 1;
         public float strength;
         public float baseRoughness = 1;
         [Tooltip("Factor of noise frequency per layer")]
@@ -35,6 +39,6 @@ public class NoiseSettings
     [System.Serializable]
     public class RigidNoiseSettings : SimpleNoiseSettings
     {
-        public float weightMultipler = 0.8f;
+        public float weightMultiplier = 0.8f;
     }
 }
