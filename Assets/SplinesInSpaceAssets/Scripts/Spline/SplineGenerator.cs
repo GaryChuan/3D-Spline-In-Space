@@ -5,21 +5,19 @@ using UnityEngine;
 public class SplineGenerator
 {
     SplineSettings settings;
-    Spline spline;
 
     public void UpdateSettings(SplineSettings settings)
     {
         this.settings = settings;
     }
 
-    public void UpdateSpline()
+    public Spline GenerateSpline()
     {
         List<Vector3> points = new List<Vector3>(settings.points);
         Vector3 initialVel = settings.initialVelocity;
         Vector3 finalVel = settings.finalVelocity;
-
         
-        // points.Add(settings.points[0]);
+        points.Add(settings.points[0]);
 
         int N = points.Count;
         float[,] m = new float[N, N];
@@ -97,11 +95,6 @@ public class SplineGenerator
             m[i, i + 1] = 0.0f;
         }
 
-        spline = new Spline(points, data);
-    }
-
-    public Vector3 GeneratePoint(float t)
-    {
-        return spline.GeneratePoint(t);
+        return new Spline(points, data);
     }
 }

@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Spline
   m_EditorClassIdentifier: 
   initialVelocity: {x: 0, y: 0, z: 30}
-  finalVelocity: {x: 30, y: 0, z: 0}
+  finalVelocity: {x: 0, y: 0, z: 30}
   points:
   - {x: -10, y: -10, z: -10}
   - {x: 0, y: 0, z: 0}
-  - {x: 3, y: -2, z: -5}
-  - {x: 6, y: 6, z: 7}
-  - {x: 10, y: 10, z: 10}
-  - {x: -10, y: -10, z: -10}
+  - {x: 2, y: 2, z: 2}
+  - {x: -2, y: 5, z: 5}
+  - {x: 20, y: 20, z: 20}
